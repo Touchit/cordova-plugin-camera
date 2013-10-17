@@ -137,8 +137,25 @@
         </js-module>
 
     </platform>
- 
-    <!-- firefoxos -->
+
+  <!-- windows81 -->
+  <platform name="windows81">
+
+    <dependency id="org.apache.cordova.file" />
+    <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+      <Capability Name="picturesLibrary" />
+      <DeviceCapability Name="webcam" />
+    </config-file>
+    <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
+      <clobbers target="CameraPopoverHandle" />
+    </js-module>
+    <js-module src="src/windows8/CameraProxy.js" name="CameraProxy">
+      <merges target="" />
+    </js-module>
+
+  </platform>
+
+  <!-- firefoxos -->
     <platform name="firefoxos">
         <config-file target="config.xml" parent="/*">
             <feature name="Camera">
